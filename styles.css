@@ -1,0 +1,358 @@
+/* Stili generali */
+@font-face {
+    font-family: 'Ringbearer';
+    src: url('fonts/Ringbearer.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Modificato per avere uno sfondo nero */
+    color: #ffffff;
+    transition: background-image 0.3s ease-in-out;
+}
+
+/* Stile per il body quando il menu burger è aperto */
+body.menu-open {
+    background-image: url('images/greenbackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1000;
+    height: 120px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    font-family: 'Ringbearer', serif;
+    background: linear-gradient(45deg, #FFD700, #FF8C00, #FF4500);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    animation: fiamme 2s infinite linear;
+    line-height: 80px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1001;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    font-family: 'Ringbearer', serif;
+    font-size: 1.2em;
+    background: linear-gradient(45deg, #FFD700, #FF8C00, #FF4500);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    animation: fiamme 2s infinite linear;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Burger menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    z-index: 1002;
+}
+
+.menu-toggle .bar {
+    height: 4px;
+    width: 25px;
+    margin: 4px 0;
+    background-color: #FFD700;
+    border-radius: 2px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 500px;
+    z-index: 1;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%), url('images/rivendell.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero .overlay h2 {
+    font-size: 2.5em;
+    font-family: 'Ringbearer', serif;
+    background: linear-gradient(45deg, #FFD700, #FF8C00, #FF4500);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    animation: fiamme 2s infinite linear;
+    margin-bottom: 20px;
+}
+
+.hero .overlay p {
+    font-size: 1.5em;
+    color: #ffffff;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Sezione video */
+.video-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #1e1e1e;
+}
+
+.video-container {
+    width: 80%;
+    max-width: 960px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* Content Section */
+.about, .content {
+    padding: 50px 20px;
+    text-align: center;
+    z-index: 1;
+}
+
+.about h2, .content h2 {
+    font-family: 'Ringbearer', serif;
+    font-size: 2em;
+    background: linear-gradient(45deg, #FFD700, #FF8C00, #FF4500);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    animation: fiamme 2s infinite linear;
+}
+
+.about p, .content p {
+    font-size: 1.5em;
+    color: #ffffff;
+    max-width: 800px;
+    margin: 20px auto 0;
+}
+
+/* Sezione film */
+.films {
+    padding: 20px;
+}
+
+.film-category {
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.film-category h2 {
+    font-family: 'Ringbearer', serif;
+    font-size: 2.5em;
+    color: #FFD700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.film-card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.film-card {
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    text-align: center;
+}
+
+.film-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #FFD700;
+}
+
+.film-details {
+    padding: 15px;
+}
+
+.film-details h3 {
+    font-family: 'Ringbearer', serif;
+    font-size: 1.8em;
+    color: #FF8C00;
+    margin-bottom: 10px;
+}
+
+.film-details p.description {
+    font-size: 1em;
+    color: #bbbbbb;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    font-size: 0.9em;
+}
+
+/* Animazione per l'effetto fiammeggiante */
+@keyframes fiamme {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1, h2, h3 {
+    animation: fiamme 2s infinite linear;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        padding: 0;
+        height: 120px;
+        position: relative;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+        right: 20px;
+        top: 40px;
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 120px;
+        left: -100vw;
+        width: 100vw;
+        height: calc(100vh - 120px);
+        text-align: center;
+        transition: left 0.3s ease-in-out;
+        z-index: 1001;
+    }
+
+    .nav-list.active {
+        left: 0;
+        transition: left 0.3s ease-in-out;
+    }
+
+    .nav-list.active {
+        background-image: url('images/greenbackground.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .nav-list li a {
+        font-size: 1.6em;
+        margin: 20px 0;
+    }
+
+    .hero .overlay h2 {
+        font-size: 2em;
+    }
+
+    .about h2, .content h2 {
+        font-size: 1.6em;
+    }
+
+    .about p, .content p {
+        font-size: 1.4em;
+    }
+
+    .film-card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .film-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
